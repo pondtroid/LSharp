@@ -438,7 +438,7 @@ namespace xSaliceReligionAIO.Champions
                 if ((menu.Item("ComboActive", true).GetValue<KeyBind>().Active || menu.Item("HarassActive", true).GetValue<KeyBind>().Active )
                     && (target is Obj_AI_Hero))
                 {
-                    if (menu.Item("E_Reset", true).GetValue<bool>() && E.IsReady())
+                    if (menu.Item("E_Reset", true).GetValue<bool>() && target.IsValidTarget() && E.IsReady())
                         E.Cast();
 
                     int mode = menu.Item("Combo_mode", true).GetValue<StringList>().SelectedIndex;
